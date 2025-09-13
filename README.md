@@ -2,6 +2,11 @@
 The script aims to crawl metadata (eg. title, keywords, description) based on a focused URL. If IP limitation is ebabled, a Anti-Scraping mechanisam, then we cannot get the metadata. Therefore, commercial wensites are not recommended to test.
 
 
+## Feature
+- No 3<sup>rd</sup> library used. All use python build-in module
+- JSON used for returning data to PHP -- Easier for processing
+
+
 ## Description
 This script takes commend line argument as parameters. There are 3 parameters. The second parament is seed URL and third parameter is number of max page. And JSON data are returned. <br>
 
