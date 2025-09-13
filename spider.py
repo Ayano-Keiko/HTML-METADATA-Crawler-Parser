@@ -160,7 +160,7 @@ def spider(seed_url, max_pages):
             # body_content = re.sub(r"\b(?=[MDCLXVIΙ])M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})([IΙ]X|[IΙ]V|V?[IΙ]{0,3})\b\.?", '', body_content, flags=(re.IGNORECASE | re.MULTILINE | re.DOTALL))
 
             url_details.append(
-                json.dumps({'title': sql_escape(title), 'description': sql_escape(description), 'url': url, 'keywords': sql_escape(keywords), 'body': sql_escape(body_content)})
+                json.dumps({'url': url, 'title': sql_escape(title), 'description': sql_escape(description), 'keywords': sql_escape(keywords), 'body': sql_escape(body_content)})
             )
 
             # retrieve 所有带 <a> href里的 pages & add to queue(FIFO) | 需要过滤
@@ -224,5 +224,6 @@ if __name__ == '__main__':
 
     print(json.dumps(detail))
     # print(detail)
+
 
 
