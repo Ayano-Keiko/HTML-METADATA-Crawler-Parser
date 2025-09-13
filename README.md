@@ -21,3 +21,6 @@ Finally, PHP file `admin.php` call spider.php
 ```PHP
 system( "/usr/bin/php spider.php '$seed_url' $max_number " );
 ```
+
+## Get Start
+I use form to upload 'GET' data to php, which parses the data and process further.<br />
