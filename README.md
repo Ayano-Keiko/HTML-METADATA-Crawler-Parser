@@ -1,2 +1,23 @@
-# HTML-METADATA-Crawler-Parser
-The script for crwaling metadata in the HTML document
+# HTML METADATA Crawler & Parser
+The script aims to crawl metadata (eg. title, keywords, description) based on a focused URL. If IP limitation is ebabled, a Anti-Scraping mechanisam, then we cannot get the metadata. Therefore, commercial wensites are not recommended to test.
+
+
+## Description
+This script takes commend line argument as parameters. There are 3 parameters. The second parament is seed URL and third parameter is number of max page. And JSON data are returned. <br>
+
+The JSON structure is listed below.<br>
+```
+    {"URL Table": [url1(dict), url2, ...], "pr_scores": {{'url1': pagerank1, ...}}, "number": count}
+```
+
+In `spider.php`, PHP is used to receive JSON data from python execution.<br>
+```php
+$time_start = microtime(true);
+$content = shell_exec( " python ./spider.py '$URL' $max_number " );
+$time_end = microtime(true);
+```
+
+Finally, PHP file `admin.php` call spider.php
+```PHP
+system( "/usr/bin/php spider.php '$seed_url' $max_number " );
+```
