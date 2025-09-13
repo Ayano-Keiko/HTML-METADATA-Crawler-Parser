@@ -212,7 +212,7 @@ def spider(seed_url, max_pages):
 
 
 if __name__ == '__main__':
-    url = sys.argv[1] # https://undcemcs01.und.edu/~wen.chen.hu/course/525/ | https://date-a-live5th-anime.com/
+    url = sys.argv[1] # https://date-a-live5th-anime.com/
     max_number = int(sys.argv[2])  # int(sys.argv[2])  10
 
     # Time Counting - Just debug & comment them out while real develop
@@ -224,4 +224,5 @@ if __name__ == '__main__':
 
     print(json.dumps(detail))
     # print(detail)
+
 
