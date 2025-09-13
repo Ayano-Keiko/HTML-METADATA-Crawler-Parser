@@ -1,5 +1,5 @@
 # HTML METADATA Crawler & Parser
-The script aims to crawl metadata (eg. title, keywords, description) based on a focused URL. If IP limitation is ebabled, a Anti-Scraping mechanisam, then we cannot get the metadata. Therefore, commercial wensites are not recommended to test.
+The script aims to crawl metadata (eg. title, keywords, description) based on a focused URL. And it is used for SQL insertion or JSON data saving. If IP limitation is ebabled, a Anti-Scraping mechanisam, then we cannot get the metadata. Therefore, commercial wensites are not recommended to test.
 
 
 ## Feature
