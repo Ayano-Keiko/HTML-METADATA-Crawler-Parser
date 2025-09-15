@@ -24,7 +24,7 @@ $time_end = microtime(true);
 
 
 ## Get Start
-I use form to upload 'GET' data to php, which parses the data and process further.<br />
+I use form to upload 'POST' data to php, which parses the data and process further.<br />
 For example, use the following code to call spider.php
 ```php
 // some code
