@@ -22,10 +22,21 @@ $content = shell_exec( " python ./spider.py '$URL' $max_number " );
 $time_end = microtime(true);
 ```
 
-Finally, PHP file `admin.php` call spider.php
-```PHP
-system( "/usr/bin/php spider.php '$seed_url' $max_number " );
-```
 
 ## Get Start
 I use form to upload 'GET' data to php, which parses the data and process further.<br />
+For example, use the following code to call spider.php
+```php
+// some code
+$seed_url = trim( $_POST['seed'] );
+$max_number = intval( $_POST['max_page'] );
+$submit = $_POST['submit'];
+
+
+if ( $submit === 'Start Crawling') {
+	// $command = "mysql --host=$host --user=$username --password=$password --database= $database";
+	// $html = shell_exec( "python spider.py $seed_url $max_number " );
+	system( "/usr/bin/php spider.php '$seed_url' $max_number " );			
+}
+// some code
+```
