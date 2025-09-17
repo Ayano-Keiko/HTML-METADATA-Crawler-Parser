@@ -1,3 +1,29 @@
+'''
+CREATE TABLE IF NOT EXISTS keywords (
+  kwID     bigint AUTO_INCREMENT PRIMARY KEY,
+  keyword  VARCHAR(255) not null
+  UNIQUE (keyword)
+ );
+
+CREATE TABLE IF NOT EXISTS allurl (
+  urlID  bigint AUTO_INCREMENT PRIMARY KEY,
+  url    VARCHAR(256) not null UNIQUE,
+  title  VARCHAR(256),
+  keywords varchar(256),
+  description text,
+  pagerank double default 0.0
+  -- bodycontent text
+);
+
+CREATE TABLE IF NOT exists url_index (
+  kwID   bigint,
+  urlID  bigint,
+  PRIMARY KEY ( kwID, urlID ),
+  FOREIGN KEY ( kwID  ) REFERENCES  keywords  ( kwID ) ON UPDATE CASCADE,
+  FOREIGN KEY ( urlID ) REFERENCES  allurl ( urlID ) ON UPDATE CASCADE
+);
+'''
+
 import json
 import time
 import urllib
@@ -224,6 +250,7 @@ if __name__ == '__main__':
 
     print(json.dumps(detail))
     # print(detail)
+
 
 
 
