@@ -2,6 +2,13 @@
 The script aims to crawl metadata (eg. title, keywords, description) based on a focused URL. And it is used for SQL insertion or JSON data saving. If IP limitation is ebabled, a Anti-Scraping mechanisam, then we cannot get the metadata. Therefore, commercial wensites are not recommended to test.
 
 
+## System Requirements
+- RHEL 9 ( Red Hat Enterprise Linux release 9.6 (Plow) )
+- PHP 8.0.30 (cli) (built: Apr 28 2025 09:46:47)
+- Python 3.9.21
+- Apache/2.4.62 (Red Hat Enterprise Linux)
+
+
 ## Feature
 - No 3<sup>rd</sup> library used. All use python build-in module
 - JSON used for returning data to PHP -- Easier for processing
