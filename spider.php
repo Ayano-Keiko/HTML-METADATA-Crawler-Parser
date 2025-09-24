@@ -190,7 +190,7 @@ echo( $contentBody );
 
 $backToAdminiPage =<<<HTML
     <dialog id="backToAdmini" >
-        <form method="post" action="http://undcemcs02.und.edu/~sicheng.zhong/525/1/js/toAdmin.php">
+        <form method="post" action="toAdmin.php">
         <p> <label for="admin-password">Admin Password</label>
             <input type="password" name="admin-password" placeholder="Please enter the admin password" id="admin-password" class="password" required="">
         </P>
@@ -199,7 +199,7 @@ $backToAdminiPage =<<<HTML
         </P>
         </form>
     </dialog>
-<script src="http://undcemcs02.und.edu/~sicheng.zhong/525/1/js/Dialog.js" defer></script>
+<script src="Dialog.js" defer></script>
 HTML;
 
 echo ( $backToAdminiPage  );
