@@ -138,7 +138,7 @@ class PageRank {
 }
 
 function page_rank( $pagesMap ) {
-	// $cmd = "/usr/bin/python ./PageRank.py ";
+	// $cmd = "/usr/bin/python ./cgi-bin/525/1/PageRank.py ";  // python file may have error with premission
 	// echo "<p><code>$cmd</code></p>";
 	// $pageRanks = json_decode( shell_exec( $cmd ) );
 	$success_sql = 0;
@@ -151,9 +151,9 @@ function page_rank( $pagesMap ) {
 
 	
 	$host = "localhost";
-	$username = "root";
+	$username = "user";
 	$database = "db";
-	$password = "123456";
+	$password = "password";
 	
 	$conn = mysqli_init( );
 	mysqli_ssl_set( $conn, NULL, NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL );

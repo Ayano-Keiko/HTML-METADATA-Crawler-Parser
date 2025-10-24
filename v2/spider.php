@@ -63,8 +63,7 @@ $item = crawl($URL, $max_number);
 $count_query = $item[0];
 $pagesMap = $item[1];
 
-// var_dump( $pagesMap );
-// file_put_contents( "./Page-Rank.json", json_encode( $pagesMap ) );
+// file_put_contents( "./data/Page-Rank.json", json_encode( $pagesMap ) );
 
 $count_query = $count_query + page_rank( $pagesMap );
 
