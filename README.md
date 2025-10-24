@@ -20,7 +20,7 @@ This script takes commend line argument as parameters. There are 3 parameters. T
 
 The JSON structure is listed below.<br>
 ```
-    {"URL Table": [url1(dict), url2, ...], "pr_scores": {{'url1': pagerank1, ...}}, "number": count}
+    {'code': 200, 'title': self.title, 'meta data': self.metaData, 'important sentence': ' '.join(self.importance), 'links': list( self.links ) }
 ```
 
 
