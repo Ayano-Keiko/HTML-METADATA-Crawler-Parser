@@ -2,7 +2,8 @@
 The script aims to crawl metadata (eg. title, keywords, description) based on a focused URL. And it is used for SQL insertion or JSON data saving. If IP limitation is ebabled, a Anti-Scraping mechanisam, then we cannot get the metadata. Therefore, commercial wensites are not recommended to test.
 
 
-## System Requirements
+## System Environment
+The script run on following environment<br>
 - RHEL 9 ( Red Hat Enterprise Linux release 9.6 (Plow) )
 - PHP 8.0.30 (cli) (built: Apr 28 2025 09:46:47)
 - Python 3.9.21
@@ -22,12 +23,6 @@ The JSON structure is listed below.<br>
     {"URL Table": [url1(dict), url2, ...], "pr_scores": {{'url1': pagerank1, ...}}, "number": count}
 ```
 
-In `spider.php`, PHP is used to receive JSON data from python execution.<br>
-```php
-$time_start = microtime(true);
-$content = shell_exec( " python ./spider.py '$URL' $max_number " );
-$time_end = microtime(true);
-```
 
 
 ## Get Start
