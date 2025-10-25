@@ -1,5 +1,5 @@
 # HTML METADATA Crawler & Parser
-The script aims to crawl metadata (eg. title, keywords, description) based on a focused URL. And it is used for SQL insertion or JSON data saving. If IP limitation is ebabled, a Anti-Scraping mechanisam, then we cannot get the metadata. Therefore, commercial wensites are not recommended to test. Only support English word tokenization.
+The script aims to crawl metadata (eg. title, keywords, description) based on a focused URL. And it is used for SQL insertion or JSON data saving. If IP limitation is ebabled, a Anti-Scraping mechanisam, then we cannot get the metadata. Therefore, commercial wensites are not recommended to test. Only English word tokenization supported.
 
 
 ## System Environment
@@ -10,18 +10,7 @@ The script run on following environment<br>
 
 
 ## Feature
-- JSON used for returning data to PHP -- Easier for processing
-- No CGI/Python needed, everything in PHP
-
-
-## Description
-This script takes commend line argument as parameters. There are 3 parameters. The second parament is seed URL and third parameter is number of max page. And JSON data are returned. <br>
-
-The JSON structure is listed below.<br>
-```
-    {'code': 200, 'title': self.title, 'meta data': self.metaData, 'important sentence': ' '.join(self.importance), 'links': list( self.links ) }
-```
-
+- No CGI/needed, everything in PHP
 
 
 ## Get Start
