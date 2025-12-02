@@ -1,19 +1,20 @@
 # HTML METADATA Crawler & Parser
+
 The script aims to crawl metadata (eg. title, keywords, description) based on a focused URL. And it is used for SQL insertion or JSON data saving. If IP limitation is ebabled, a Anti-Scraping mechanisam, then we cannot get the metadata. Therefore, commercial wensites are not recommended to test. Only English word tokenization supported.
 
 
-## System Environment
-The script run on following environment<br>
-- RHEL 9 ( Red Hat Enterprise Linux release 9.6 (Plow) )
-- PHP 8.0.30 (cli) (built: Apr 28 2025 09:46:47)
-- Apache/2.4.62 (Red Hat Enterprise Linux)
+## Development Requirements
+
+https://undcemcs01.und.edu/~wen.chen.hu/course/525/exercise/1/
 
 
 ## Feature
+
 - No CGI/needed, everything in PHP
 
 
 ## Get Start
+
 I use form to upload 'POST' data to php, which parses the data and process further.<br />
 For example, use the following code to call spider.php
 
