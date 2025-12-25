@@ -18,7 +18,8 @@ https://undcemcs01.und.edu/~wen.chen.hu/course/525/exercise/1/
 I use form to upload 'POST' data to php, which parses the data and process further.<br />
 For example, use the following code to call spider.php
 
-```html
+
+```php
 <!-- admin.html -->
 <h1>Focused Web Search Engine -- Admini</h1>
 <form action="admin.php" method="post" target="_self" autocomplete="off">
@@ -43,9 +44,7 @@ For example, use the following code to call spider.php
     <br />
     <button type="button" name="submit" value="Main" id="main" onclick="backToMain()">Main</button>
 </form>
-```
 
-```php
 // admin.php
 // some code
 $seed_url = trim( $_POST['seed'] );
