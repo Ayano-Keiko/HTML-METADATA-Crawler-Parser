@@ -22,7 +22,7 @@ For example, use the following code to call spider.php
 ```php
 <!-- admin.html -->
 <h1>Focused Web Search Engine -- Admini</h1>
-<form action="admin.php" method="post" target="_self" autocomplete="off">
+<form action="" method="post" target="_self" autocomplete="off">
     <label for="seed">Seed URL: </label>
     <input type="url" name="seed" id="seed" required />
     <br>
