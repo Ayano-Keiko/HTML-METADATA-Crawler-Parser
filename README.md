@@ -60,7 +60,8 @@ if ( $submit === 'Start Crawling') {
 // some code
 ```
 
-> Rust page rank usage
+[Rust page rank usage]
+
 If using Rust Page rank, please create a cargo workspace with ` Cargo.toml ` including below contents
 
 ```
