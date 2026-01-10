@@ -1,11 +1,6 @@
-/*
-Implementation of Page Rank algorithm
-paper "Google’s PageRank: The Math Behind the Search Engine"
-*/
+use std::collections::HashMap;
 
 mod mat_mul;
-
-use std::collections::HashMap;
 
 pub struct PageRank {
     size: usize,
@@ -79,18 +74,18 @@ impl PageRank {
         let mut pi: Vec<Vec<f64>> = vec![vec![1f64 / (self.size as f64); self.size]; 1];
 
         // Google Matrix
-        let google_matrix = mat_mul::matrix_addtion(
-            &mat_mul::scaler_multiply(alpha, &self.hyperlink),
-            &mat_mul::scaler_multiply(1.0 - alpha, &mat_mul::matrix_multiply(
+        let google_matrix = crate::mat_mul::mat_ops::matrix_addtion(
+            &crate::mat_mul::mat_ops::scaler_multiply(alpha, &self.hyperlink),
+            &crate::mat_mul::mat_ops::scaler_multiply(1.0 - alpha, &crate::mat_mul::mat_ops::matrix_multiply(
                 &ones,
                 &v
             )));
 
         for _ in 0..=k{
 
-            let pik =  mat_mul::matrix_multiply(&pi, &google_matrix);
+            let pik =  crate::mat_mul::mat_ops::matrix_multiply(&pi, &google_matrix);
 
-            if mat_mul::length(&mat_mul::matrix_substract(&pik, &pi )[0] ) <= threshold  {
+            if crate::mat_mul::mat_ops::length(&crate::mat_mul::mat_ops::matrix_substract(&pik, &pi )[0] ) <= threshold  {
                 // change pi to pik
                 pi = pik;
                 break;
@@ -113,6 +108,7 @@ impl PageRank {
         return &self.hyperlink;
     }
 
+    #[allow(dead_code)]
     pub fn dim(&self) -> usize {
         /*
         the dimension of page rank matrix
@@ -121,29 +117,33 @@ impl PageRank {
     }
 }
 
+
 #[cfg(test)]
 mod tests {
-    use std::collections::HashMap;
 
     #[test]
-    fn it_works() {
-
+    fn calculate_scores() {
         let adjacency_matrix: Vec<Vec<u8>> = vec![
             vec![0u8, 1u8, 0u8, 0u8],
             vec![0u8, 0u8, 1u8, 0u8],
             vec![1u8, 0u8, 0u8, 1u8],
             vec![0u8, 0u8, 0u8, 0u8]];
 
-
         let pr: super::PageRank = super::PageRank::create_from_adjacency_matrix(
             &adjacency_matrix
         );
-        println!("{:?}", pr.retrieve_hyperlink_matrix());
 
-        let rank_score = match pr.page_rank(0.85, 10, 0.01) {
-            Some(rank_score) => rank_score,
-            None => HashMap::new(),
+        // println!("The size of matrix: {}", pr.dim());
+        println!("H:\n{:?}", pr.retrieve_hyperlink_matrix());
+
+        let scores = match pr.page_rank(0.85, 10, 0.01) {
+            Some(score) => score,
+            None => std::collections::HashMap::new(),
         };
-        print!("{:?}", rank_score);
+
+        print!("Score:\n");
+        for (key, val) in &scores {
+            println!("{key:03} --> {val:5.2}");
+        }
     }
 }

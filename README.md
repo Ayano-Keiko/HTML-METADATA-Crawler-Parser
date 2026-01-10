@@ -59,3 +59,16 @@ if ( $submit === 'Start Crawling') {
 }
 // some code
 ```
+
+> Rust page rank usage
+If using Rust Page rank, please create a cargo workspace with ` Cargo.toml ` including below contents
+
+```
+[workspace]
+members = [
+    "main",
+    "page-rank"
+]
+```
+
+And create "main" binary crate and "page-rank" library crate. Replace all things in "page-rank/src" with " page-rank " folders in this repo. Then modify "Cargo.toml" in main crate ` page-rank = { path = "../page-rank" } `. Then compile the project.
