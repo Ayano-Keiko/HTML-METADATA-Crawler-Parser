@@ -15,9 +15,7 @@ https://undcemcs01.und.edu/~wen.chen.hu/course/525/exercise/1/
 
 ## Get Start
 
-I use form to upload 'POST' data to php, which parses the data and process further.<br />
-For example, use the following code to call spider.php
-
+I use form to upload 'POST' data to php, which parses the data and process further. Put the code below in a PHP file locating in the same directory that ` spider.php ` locates.
 
 ```php
 <!-- admin.html -->
